@@ -1,3 +1,4 @@
+
 name: FizzBuzz Tests  # Nom du workflow, pour identifier facilement ce qu'il fait
 
 on:
@@ -27,3 +28,6 @@ jobs:
       - name: Run tests  # Étape pour lancer les tests
         run: python -m unittest discover tests  # Lance tous les tests dans le dossier 'tests' avec unittest
 
+ - name: Upload coverage report to GitHub Pages (optional)
+        run: coverage html  # Crée un rapport HTML
+        
