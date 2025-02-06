@@ -1,3 +1,4 @@
+---
 name: FizzBuzz Tests  # Nom du workflow, pour identifier facilement ce qu'il fait
 
 on:
@@ -22,11 +23,9 @@ jobs:
           python-version: '3.9'  # Version de Python à installer (ici, la version 3.9)
 
       - name: Install dependencies  # Étape pour installer les dépendances nécessaires
-        run: pip install -r requirements.txt || echo "No requirements.txt found"  # Installe les paquets listés dans requirements.txt ou affiche un message si ce fichier n'est pas trouvé
+        run: |
+          pip install -r requirements.txt || echo "No requirements.txt found"  # Installe les paquets listés dans requirements.txt, ou affiche un message si le fichier n'existe pas
 
-      - name: Run tests  # Étape pour lancer les tests
-        run: python -m unittest discover tests  # Lance tous les tests dans le dossier 'tests' avec unittest
+      - name: Run tests  # Étape pour exécuter les tests
+        run: pytest --maxfail=1 --disable-warnings -q  # Exécute les tests avec pytest, en arrêtant après le premier échec et en supprimant les warnings
 
- - name: Upload coverage report to GitHub Pages (optional)
-        run: coverage html  # Crée un rapport HTML
-        
