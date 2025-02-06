@@ -1,4 +1,4 @@
-name: FizzBuzz Tests  # Nom du workflow, pour identifier facilement ce qu'il fait
+name: FizzBuzz Tests
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main  # Le workflow se déclenche aussi lorsqu'une PR est ouverte ou mise à jour pour la branche 'main'
 
 jobs:
-  test:  # Le job qui va faire les tests
+  test:
     runs-on: ubuntu-latest  # Utilise la dernière version d'Ubuntu pour exécuter les tests
 
     steps:
@@ -22,10 +22,12 @@ jobs:
           python-version: '3.9'  # Version de Python à installer (ici, la version 3.9)
 
       - name: Install dependencies  # Étape pour installer les dépendances nécessaires
-        run: pip install -r requirements.txt || echo "No requirements.txt found"  # Installe les paquets listés dans requirements.txt ou affiche un message si ce fichier n'est pas trouvé
+        run: |
+          pip install pytest
+          pip install coverage
 
       - name: Run tests  # Étape pour lancer les tests
-        run: python -m unittest discover tests  # Lance tous les tests dans le dossier 'tests' avec unittest
+        run: coverage run -m unittest discover tests  # Utiliser coverage pour exécuter les tests
 
       - name: Upload coverage report to GitHub Pages (optional)
         run: coverage html  # Crée un rapport HTML
