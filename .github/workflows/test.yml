@@ -1,4 +1,3 @@
-
 name: FizzBuzz Tests  # Nom du workflow, pour identifier facilement ce qu'il fait
 
 on:
