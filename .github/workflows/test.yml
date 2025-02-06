@@ -1,5 +1,4 @@
----
-name: FizzBuzz Tests  # Nom du workflow, pour identifier facilement ce qu'il fait
+name: FizzBuzz Tests  # Nom du workflow
 
 on:
   push:
@@ -7,25 +6,31 @@ on:
       - main  # Le workflow se déclenche lorsqu'il y a un push sur la branche 'main'
   pull_request:
     branches:
-      - main  # Le workflow se déclenche aussi lorsqu'une PR est ouverte ou mise à jour pour la branche 'main'
+      - main  # Le workflow se déclenche lorsqu'une PR est ouverte ou mise à jour
 
 jobs:
-  test:  # Le job qui va faire les tests
+  test:  # Le job pour exécuter les tests
     runs-on: ubuntu-latest  # Utilise la dernière version d'Ubuntu pour exécuter les tests
 
     steps:
       - name: Checkout repository  # Étape pour récupérer le code du dépôt
-        uses: actions/checkout@v3  # Action GitHub officielle pour récupérer le code source du dépôt
+        uses: actions/checkout@v3  # Action GitHub pour récupérer le code source
 
       - name: Set up Python  # Étape pour configurer Python
-        uses: actions/setup-python@v4  # Action GitHub officielle pour installer Python
+        uses: actions/setup-python@v4  # Action GitHub pour installer Python
         with:
-          python-version: '3.9'  # Version de Python à installer (ici, la version 3.9)
+          python-version: '3.9'  # Version de Python à installer
 
       - name: Install dependencies  # Étape pour installer les dépendances nécessaires
         run: |
-          pip install -r requirements.txt || echo "No requirements.txt found"  # Installe les paquets listés dans requirements.txt, ou affiche un message si le fichier n'existe pas
+          pip install -r requirements.txt || echo "No requirements.txt found"
 
-      - name: Run tests  # Étape pour exécuter les tests
-        run: pytest --maxfail=1 --disable-warnings -q  # Exécute les tests avec pytest, en arrêtant après le premier échec et en supprimant les warnings
+      - name: Run tests with coverage  # Étape pour exécuter les tests avec couverture
+        run: |
+          pytest --maxfail=1 --disable-warnings -q --cov=main --cov-report=xml
+
+      - name: Upload coverage report  # Étape pour télécharger le rapport de couverture
+        uses: codecov/codecov-action@v3  # Action pour envoyer les rapports de couverture vers Codecov
+        with:
+          file: coverage.xml  # Spécifie le fichier XML généré par pytest-cov
 
