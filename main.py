@@ -1,8 +1,18 @@
+def fizzbuzz(n: int) -> str:
+    if n % 3 == 0 and n % 5 == 0:
+        return "FizzBuzz"
+    elif n % 3 == 0:
+        return "Fizz"
+    elif n % 5 == 0:
+        return "Buzz"
+    return str(n)
+
 
 def main():
-    print('Hello, World!')
-    return 0
+    for i in range(1, 101):
+        print(fizzbuzz(i))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
 
