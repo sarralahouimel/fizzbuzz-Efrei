@@ -1,0 +1,59 @@
+[33mcommit 53c9f020f6143f5de20818a0e26d1410c2161eed[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 12:43:28 2025 +0100
+
+    Fix YAML syntax and adjust workflow
+
+[33mcommit 3a344c3d6c96e9513f65eb1cd0cd118d784fd0e4[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 12:37:29 2025 +0100
+
+    Correction des erreurs de syntaxe et longueur des lignes
+
+[33mcommit 715399f04b1b9ba5320dff9bfd84f8fac9fdd98c[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 12:28:27 2025 +0100
+
+    Fix YAML syntax errors in test.yml
+
+[33mcommit 133b2ad3d538536e86c6aa64fd2febfe2e73e51d[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 12:01:34 2025 +0100
+
+    Supprimer main.py.swp
+
+[33mcommit 1990e7fcf15622065bf86bbe373f46a86ab63349[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 12:00:25 2025 +0100
+
+    Supprimer fizzbuzz.py du suivi Git
+
+[33mcommit 7d9b49cd064f982e585b7e49646ea5e4c6c82fce[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 11:54:56 2025 +0100
+
+    Ajout du rapport de couverture
+
+[33mcommit b6a2c8f7fafe3b4d8dcd5e0a48fd234ed80abf28[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 11:24:50 2025 +0100
+
+    Implémentation FizzBuzz avec tests et GitHub Actions
+
+[33mcommit 1c91474aba4f31b352e01f5ecef82989f5107485[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Thu Feb 6 09:32:30 2025 +0100
+
+    Implémentation FizzBuzz avec tests et GitHub Actions
+
+[33mcommit 04383c3256aefc8aa05fea0d6c26aa3bc1dee62e[m
+Author: sarralahouimel <139455723+sarralahouimel@users.noreply.github.com>
+Date:   Wed Feb 5 17:01:40 2025 +0100
+
+    Ajout du code FizzBuzz avec les règles supplémentaires
+
+[33mcommit 093aae04bff35fce514798ed03ab573e28e18934[m
+Author: Tomaso Ethan <62837924+Neonexus45@users.noreply.github.com>
+Date:   Wed Feb 5 15:57:12 2025 +0100
+
+    init
