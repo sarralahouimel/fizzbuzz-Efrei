@@ -1,0 +1,19 @@
+name: Test with Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and Test with Docker
+        run: |
+          docker build -t fizzbuzz-app .
+          docker run fizzbuzz-app
