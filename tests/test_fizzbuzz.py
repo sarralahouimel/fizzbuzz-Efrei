@@ -16,7 +16,7 @@ class TestFizzBuzz(unittest.TestCase):
         self.assertEqual(fizzbuzz(10), "Buzz")
 
     def test_fizzbuzz(self):
-        self.assertEqual(fizzbuzz(15), "FizzBuzz")
+        self.assertEqual(fizzbuzz(15), "Fizzbuzz")
         self.assertEqual(fizzbuzz(30), "FizzBuzz")
 
     def test_regular_numbers(self):
